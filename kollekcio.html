@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kollekció - Nemerion Dog Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold-primary: #C5A065;
+            --bg-color: #FDFBF7;
+            --text-color: #3e3a30;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        /* --- FEJLÉC --- */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 1px solid rgba(197, 160, 101, 0.3);
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin: 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: var(--gold-primary);
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover { opacity: 0.7; }
+
+        /* --- INSTAGRAM STÍLUSÚ RÁCS --- */
+        .gallery-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px 60px 20px;
+            display: grid;
+            /* 3 oszlopos elrendezés mint az Instagramon */
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px; /* Távolság a képek között */
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 1 / 1; /* Tökéletes négyzet alak */
+            overflow: hidden;
+            background-color: #eee;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Kitölti a négyzetet torzítás nélkül */
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        /* --- HOVER EFFEKT (Homályosítás + Ár) --- */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(253, 251, 247, 0.6); /* Világos áttetsző réteg */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 2;
+        }
+
+        .price-tag {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            border: 1px solid var(--gold-primary);
+            padding: 10px 20px;
+            transform: translateY(20px);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            filter: blur(5px);
+            transform: scale(1.1); /* Enyhe közelítés */
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .gallery-item:hover .price-tag {
+            transform: translateY(0);
+        }
+
+        /* --- MOBIL NÉZET --- */
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: repeat(2, 1fr); /* Mobilon 2 oszlop */
+                gap: 10px;
+            }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Kollekció</h1>
+        <a href="index.html" class="back-link">← Vissza a főoldalra</a>
+    </header>
+
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="1.jpg" alt="Nyakörv 1">
+            <div class="overlay">
+                <div class="price-tag">2500 Ft</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="2.jpg" alt="Nyakörv 2">
+            <div class="overlay">
+                <div class="price-tag">2500 Ft</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="3.jpg" alt="Nyakörv 3">
+            <div class="overlay">
+                <div class="price-tag">2500 Ft</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="4.jpg" alt="Nyakörv 4">
+            <div class="overlay">
+                <div class="price-tag">2500 Ft</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="5.jpg" alt="Nyakörv 5">
+            <div class="overlay">
+                <div class="price-tag">2500 Ft</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="6.jpg" alt="Nyakörv 6">
+            <div class="overlay">
+                <div class="price-tag">2500 Ft</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="7.jpg" alt="Nyakörv 7">
+            <div class="overlay">
+                <div class="price-tag">2500 Ft</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="8.jpg" alt="Nyakörv 8">
+            <div class="overlay">
+                <div class="price-tag">2500 Ft</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="9.jpg" alt="Nyakörv 9">
+            <div class="overlay">
+                <div class="price-tag">2500 Ft</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="10.jpg" alt="Nyakörv 10">
+            <div class="overlay">
+                <div class="price-tag">2500 Ft</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
